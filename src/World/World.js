@@ -22,7 +22,7 @@ const params = {
   minute: new Date().getMinutes(),
   hour: new Date().getHours(),
   day: new Date().getDate(),
-  month: new Date().getMonth(),
+  month: new Date().getMonth() + 1,
   latitude: -22.863933,
   longitude: -47.012181,
   northOffset: 303,
