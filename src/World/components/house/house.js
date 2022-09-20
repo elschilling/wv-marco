@@ -8,7 +8,7 @@ async function loadHouse() {
   dracoLoader.setDecoderPath('/draco/')
   const gltfLoader = new GLTFLoader()
   gltfLoader.setDRACOLoader(dracoLoader)
-  const houseData = await gltfLoader.loadAsync('/assets/models/Ralph-c.glb')
+  const houseData = await gltfLoader.loadAsync('/assets/models/Marco-c.glb')
   const house = setupModel(houseData)
   house.traverse(n => {
     if (n.isMesh) {
@@ -27,12 +27,12 @@ async function loadHouse() {
   house.position.z += (house.position.z - center.z)
   house.position.y = 2.2
 
-  let cobertura = house.getObjectByName('coberturaEmpty')
-  let pavSuperior = house.getObjectByName('superiorEmpty')
-  let pavTerreo = house.getObjectByName('terreoEmpty')
+  // let cobertura = house.getObjectByName('coberturaEmpty')
+  // let pavSuperior = house.getObjectByName('superiorEmpty')
+  // let pavTerreo = house.getObjectByName('terreoEmpty')
 
 
-  return { house, cobertura, pavSuperior, pavTerreo }
+  return { house }
 }
 
 export { loadHouse }

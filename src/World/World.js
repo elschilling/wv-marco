@@ -23,9 +23,9 @@ const params = {
   hour: new Date().getHours(),
   day: new Date().getDate(),
   month: new Date().getMonth() + 1,
-  latitude: -22.863933,
-  longitude: -47.012181,
-  northOffset: 303,
+  latitude: -22.983596,
+  longitude: -47.011858,
+  northOffset: 200,
   radius: 32,
   shadowBias: -0.00086
 }
@@ -85,7 +85,7 @@ class World {
   }
 
   async init() {
-    const { house, cobertura, pavSuperior, pavTerreo } = await loadHouse()
+    const { house } = await loadHouse()
     const birds = await loadBirds()
     for (var b = 0; b < birds.children.length; b++) {
       loop.updatables.push(birds.children[b])
@@ -93,10 +93,10 @@ class World {
     scene.add(house, birds)
     tl.to(birds.position, { duration: 60, delay: 1, x: 100, z: 120 })
 
-    const houseFolder = this.gui.addFolder('Maquete')
-    houseFolder.add(cobertura, 'visible').name('Cobertura')
-    houseFolder.add(pavSuperior, 'visible').name('Pav. Superior')
-    houseFolder.add(pavTerreo, 'visible').name('Pav. Térreo')
+    // const houseFolder = this.gui.addFolder('Maquete')
+    // houseFolder.add(cobertura, 'visible').name('Cobertura')
+    // houseFolder.add(pavSuperior, 'visible').name('Pav. Superior')
+    // houseFolder.add(pavTerreo, 'visible').name('Pav. Térreo')
   }
 
   render() {

@@ -57,6 +57,7 @@ function createBase(radius) {
     text.position.z = radius + 8
     text.rotation.x = - Math.PI/2 
     base.add(text)
+    base.position.y = -1
   })
 
 
